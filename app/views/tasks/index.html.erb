@@ -1,0 +1,10 @@
+<h1>All tasks</h1>
+<% @tasks.each do |task| %>
+<h2><%= link_to(task.name, task_path(task)) %></h2>
+<%= link_to("Edit", edit_task_path(task)) %>
+<%= link_to "Delete", task_path(task),
+      method: :delete,
+      data: { confirm: "Are you sure?" } %>
+<%= link_to("See all tasks", tasks_path) %>
+<% end %>
+<%= link_to("Add new entry", new_task_path) %>
